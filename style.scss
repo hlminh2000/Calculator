@@ -1,0 +1,55 @@
+
+
+
+html{
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  height: 100%;
+  width: 100%;
+}
+
+.app{
+  position: absolute;
+  height: 500px;
+  width: 300px;
+  border: solid 1px red;
+  top: 50%;
+  margin-top: -250px;
+  left: 50%;
+  margin-left: -150px;
+
+  .screen{
+    height: 40%;
+    border: solid 1px red;
+  }
+
+  .buttons{
+    width: 100%;
+    border: solid 1px red;
+    height: 60%;
+    .buttons-numbers{
+      width: 75%;
+      border: solid 1px red;
+      height: 100%;
+      display: inline-block;
+      .buttons-number{
+        width: 30%;
+        display: inline-block;
+        margin-right: 0px;
+        height: 25%
+      }
+    }
+    .buttons-operations{
+      width: 20%;
+      border: solid 1px red;
+      height: 100%;
+      display: inline-block;
+    }
+  }
+
+}
+
+*{border: solid 1px red;}
