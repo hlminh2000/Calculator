@@ -6,12 +6,16 @@ html{
 }
 
 body{
+  font-family: sans-serif;
   height: 100%;
   width: 100%;
   margin: 0;
 }
 
-*{border: solid 1px red;}
+*{
+  border: solid 1px red;
+  box-sizing: border-box;
+}
 
 .flex{
   display: flex;
@@ -48,12 +52,22 @@ body{
 }
 
 .flex-1{
-  flex-grow: 1;
+  flex: 1 0 25%;
 }
 .flex-2{
-  flex-grow: 2;
+  flex: 2 0 25%;
+}
+.flex-3{
+  flex: 3 0 25%;
 }
 
+.flex-justify-end{
+  justify-content: flex-end;
+}
+
+.pointer{
+  cursor: pointer;
+}
 
 
 
