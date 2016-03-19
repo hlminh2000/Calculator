@@ -4,41 +4,48 @@ html {
 
 body {
   height: 100%;
-  width: 100%; }
-
-.app {
-  position: absolute;
-  height: 500px;
-  width: 300px;
-  border: solid 1px red;
-  top: 50%;
-  margin-top: -250px;
-  left: 50%;
-  margin-left: -150px; }
-  .app .screen {
-    height: 40%;
-    border: solid 1px red; }
-  .app .buttons {
-    width: 100%;
-    border: solid 1px red;
-    height: 60%; }
-    .app .buttons .buttons-numbers {
-      width: 75%;
-      border: solid 1px red;
-      height: 100%;
-      display: inline-block; }
-      .app .buttons .buttons-numbers .buttons-number {
-        width: 30%;
-        display: inline-block;
-        margin-right: 0px;
-        height: 25%; }
-    .app .buttons .buttons-operations {
-      width: 20%;
-      border: solid 1px red;
-      height: 100%;
-      display: inline-block; }
+  width: 100%;
+  margin: 0; }
 
 * {
   border: solid 1px red; }
+
+.flex {
+  display: flex; }
+
+.flex-column {
+  flex-direction: column; }
+  .flex-column.flex-reverse {
+    flex-flow: column-reverse; }
+
+.flex-row {
+  flex-direction: row; }
+  .flex-row.flex-reverse {
+    flex-flow: row-reverse; }
+
+.flex-row {
+  flex-direction: row; }
+
+.flex-center {
+  justify-content: center; }
+
+.flex-middle {
+  align-items: center; }
+
+.flex-stretch {
+  align-items: stretch; }
+
+.flex-1 {
+  flex-grow: 1; }
+
+.flex-2 {
+  flex-grow: 2; }
+
+.app {
+  height: 500px;
+  width: 300px;
+  border: solid 2px green; }
+  .app .screen {
+    border: solid 1px blue; }
 
 /*# sourceMappingURL=style.css.map */
