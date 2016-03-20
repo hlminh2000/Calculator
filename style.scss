@@ -20,6 +20,7 @@ body{
   width: 100%;
   margin: 0;
   color: white;
+  font-family: 'Lato', sans-serif;
 }
 
 .app{
@@ -35,6 +36,7 @@ body{
     }
   }
   & > .buttons{
+    font-size: 1.2em;
   }
 }
 
