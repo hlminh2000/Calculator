@@ -1,4 +1,6 @@
-
+$color-blue: #3C9ADA;
+$color-green: #2BA95F;
+$color-gray: #464646;
 
 html{
   height: 100%;
@@ -10,6 +12,7 @@ body{
   height: 100%;
   width: 100%;
   margin: 0;
+  color: white;
 }
 
 *{
@@ -60,9 +63,9 @@ $flex_value:
 .app{
   height: 500px;
   width: 300px;
-  border: solid 2px green;
+  // border: solid 2px green;
   & > .screen{
-    border: solid 1px blue;
+    // border: solid 1px blue;
     &.screen_operation{
     }
     &.screen_result{
@@ -71,4 +74,16 @@ $flex_value:
   }
   & > .buttons{
   }
+}
+
+.blue{
+  background: $color-blue;
+}
+
+.gray{
+  background: $color-gray;
+}
+
+.green{
+  background: $color-green;
 }

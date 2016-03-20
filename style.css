@@ -6,7 +6,8 @@ body {
   font-family: sans-serif;
   height: 100%;
   width: 100%;
-  margin: 0; }
+  margin: 0;
+  color: white; }
 
 * {
   box-sizing: border-box; }
@@ -59,11 +60,17 @@ body {
 
 .app {
   height: 500px;
-  width: 300px;
-  border: solid 2px green; }
-  .app > .screen {
-    border: solid 1px blue; }
-    .app > .screen.screen_result {
-      font-size: 3em; }
+  width: 300px; }
+  .app > .screen.screen_result {
+    font-size: 3em; }
+
+.blue {
+  background: #3C9ADA; }
+
+.gray {
+  background: #464646; }
+
+.green {
+  background: #2BA95F; }
 
 /*# sourceMappingURL=style.css.map */
