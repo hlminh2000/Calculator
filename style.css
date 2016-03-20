@@ -21,6 +21,14 @@ body {
   margin: 0;
   color: white; }
 
+.app {
+  height: 550px;
+  width: 320px; }
+  .app > .screen .screen_result {
+    font-size: 4em;
+    word-break: break-all;
+    text-align: right; }
+
 * {
   box-sizing: border-box; }
 
@@ -69,12 +77,6 @@ body {
 
 .pointer {
   cursor: pointer; }
-
-.app {
-  height: 500px;
-  width: 300px; }
-  .app > .screen.screen_result {
-    font-size: 3em; }
 
 .screen_result {
   font-size: 4em;

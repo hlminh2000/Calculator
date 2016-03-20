@@ -22,6 +22,22 @@ body{
   color: white;
 }
 
+.app{
+  height: 550px;
+  width: 320px;
+  // border: solid 2px green;
+  & > .screen{
+    // border: solid 1px blue;
+    & .screen_result{
+      font-size: 4em;
+      word-break: break-all;
+      text-align: right;
+    }
+  }
+  & > .buttons{
+  }
+}
+
 *{
   // border: solid 1px red;
   box-sizing: border-box;
@@ -66,22 +82,6 @@ $flex_value:
 .flex-justify-end{ justify-content: flex-end; }
 
 .pointer{ cursor: pointer; }
-
-.app{
-  height: 500px;
-  width: 300px;
-  // border: solid 2px green;
-  & > .screen{
-    // border: solid 1px blue;
-    &.screen_operation{
-    }
-    &.screen_result{
-      font-size: 3em;
-    }
-  }
-  & > .buttons{
-  }
-}
 
 .screen_result{
   font-size: 4em;
