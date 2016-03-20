@@ -2,95 +2,47 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8"> -->
-    <!-- <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
-    <!-- Custom -->
     <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
     <script type="text/javascript" src="script.js"></script>
-
     <title>Calculator</title>
   </head>
 
 
-  <body class="flex flex-center flex-middle width-4">
+  <body class="flex flex-center flex-middle">
     <div class="app flex flex-column">
       <div class="screen flex flex-column flex-1">
-        <div class="screen_operation flex flex-justify-end">
-          hi
-        </div>
-        <div class="screen_result flex flex-justify-end flex-middle flex-1">
-          hi
-        </div>
+        <div class="screen_operation flex flex-justify-end"> </div>
+        <div class="screen_result flex flex-justify-end flex-middle flex-1"> </div>
       </div>
 
       <div class="buttons flex flex-column flex-2 flex-reverse">
         <div class="flex flex-row flex-1">
-          <div class="number flex-1 flex flex-center flex-middle width-4 pointer">
-            0
-          </div>
-          <div class="flex-1 flex flex-center flex-middle width-4 pointer ">
-            .
-          </div>
-          <div class="flex-1 flex flex-center flex-middle width-4 pointer ">
-            =
-          </div>
-          <div class="flex-1 flex flex-center flex-middle width-4 pointer ">
-            /
-          </div>
+          <div class="number flex-1 flex flex-center flex-middle pointer" id="0">0</div>
+          <div class="decimal flex-1 flex flex-center flex-middle pointer">.</div>
+          <div class="equal flex-1 flex flex-center flex-middle pointer" id="equal">=</div>
+          <div class="operator flex-1 flex flex-center flex-middle pointer" id="divide">/</div>
         </div>
         <div class="flex flex-row flex-1">
-          <div class="number flex-1 flex flex-center flex-middle width-4 pointer">
-            1
-          </div>
-          <div class="number flex-1 flex flex-center flex-middle width-4 pointer ">
-            2
-          </div>
-          <div class="number flex-1 flex flex-center flex-middle width-4 pointer ">
-            3
-          </div>
-          <div class="flex-1 flex flex-center flex-middle width-4 pointer ">
-            x
-          </div>
+          <div class="number flex-1 flex flex-center flex-middle pointer" id="1">1</div>
+          <div class="number flex-1 flex flex-center flex-middle pointer" id="2">2</div>
+          <div class="number flex-1 flex flex-center flex-middle pointer" id="3">3</div>
+          <div class="operator flex-1 flex flex-center flex-middle pointer" id="multiply">x</div>
         </div>
         <div class="flex flex-row flex-1">
-          <div class="number flex-1 flex flex-center flex-middle width-4 pointer">
-            4
-          </div>
-          <div class="number flex-1 flex flex-center flex-middle width-4 pointer ">
-            5
-          </div>
-          <div class="number flex-1 flex flex-center flex-middle width-4 pointer ">
-            6
-          </div>
-          <div class="flex-1 flex flex-center flex-middle width-4 pointer ">
-            -
-          </div>
+          <div class="number flex-1 flex flex-center flex-middle pointer" id="4">4</div>
+          <div class="number flex-1 flex flex-center flex-middle pointer" id="5">5</div>
+          <div class="number flex-1 flex flex-center flex-middle pointer" id="6">6</div>
+          <div class="operator flex-1 flex flex-center flex-middle pointer" id="minus">-</div>
         </div>
         <div class="flex flex-row flex-1">
-          <div class="number flex-1 flex flex-center flex-middle width-4 pointer">
-            7
-          </div>
-          <div class="number flex-1 flex flex-center flex-middle width-4 pointer ">
-            8
-          </div>
-          <div class="number flex-1 flex flex-center flex-middle width-4 pointer ">
-            9
-          </div>
-          <div class="flex-1 flex flex-center flex-middle width-4 pointer ">
-            +
-          </div>
+          <div class="number flex-1 flex flex-center flex-middle pointer" id="7">7</div>
+          <div class="number flex-1 flex flex-center flex-middle pointer" id="8">8</div>
+          <div class="number flex-1 flex flex-center flex-middle pointer" id="9">9</div>
+          <div class="operator flex-1 flex flex-center flex-middle pointer" id="add">+</div>
         </div>
       </div>
     </div>
 
   </body>
-
-
-
-
-
 
 </html>

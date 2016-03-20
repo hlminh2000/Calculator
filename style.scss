@@ -13,13 +13,11 @@ body{
 }
 
 *{
-  border: solid 1px red;
+  // border: solid 1px red;
   box-sizing: border-box;
 }
 
-.flex{
-  display: flex;
-}
+.flex{ display: flex; }
 
 .flex-column{
   flex-direction: column;
@@ -35,51 +33,42 @@ body{
   }
 }
 
-.flex-row{
-  flex-direction: row;
+.flex-row{ flex-direction: row; }
+
+.flex-center{ justify-content: center; }
+
+.flex-middle{ align-items: center; }
+
+.flex-stretch{ align-items: stretch; }
+
+$flex_value:
+  "1" 1,
+  "2" 2,
+  "3" 2,
+  "4" 4,
+  "5" 5;
+@each $i in $flex_value{
+  .flex-#{nth($i, 1)}{
+    flex: nth($i, 2) 0 25%;
+  }
 }
 
-.flex-center{
-  justify-content: center;
-}
+.flex-justify-end{ justify-content: flex-end; }
 
-.flex-middle{
-  align-items: center;
-}
-
-.flex-stretch{
-  align-items: stretch;
-}
-
-.flex-1{
-  flex: 1 0 25%;
-}
-.flex-2{
-  flex: 2 0 25%;
-}
-.flex-3{
-  flex: 3 0 25%;
-}
-
-.flex-justify-end{
-  justify-content: flex-end;
-}
-
-.pointer{
-  cursor: pointer;
-}
-
-
-
+.pointer{ cursor: pointer; }
 
 .app{
   height: 500px;
   width: 300px;
   border: solid 2px green;
-
-  & .screen{
+  & > .screen{
     border: solid 1px blue;
+    &.screen_operation{
+    }
+    &.screen_result{
+      font-size: 3em;
+    }
   }
-  & .buttons{
+  & > .buttons{
   }
 }
