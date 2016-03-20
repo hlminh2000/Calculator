@@ -8,6 +8,7 @@ window.addEventListener('load', () => {
   var operating = false;
   var lastOp = "";
   var freshStart = true;
+  var inDecimal = false;
 
   let calc_add = (new_val) => { return (prev_val) => {return new_val + prev_val}; }
   let calc_sub = (new_val) => { return (prev_val) => {return new_val - prev_val}; }
@@ -25,21 +26,28 @@ window.addEventListener('load', () => {
       if(freshStart === true){
         prev_val = 0;
         freshStart = false;
+        result_screen.innerHTML = "";
       }
       if(operating === false){
         prev_val *= 10;
         prev_val += Number(digit.innerHTML);
         console.log(prev_val);
-        result_screen.innerHTML = prev_val;
+        result_screen.innerHTML += digit.innerHTML;
+        operation_screen.innerHTML += prev_val;
       }
       else{
         new_val *= 10;
         new_val += Number(digit.innerHTML);
         console.log(new_val);
-        result_screen.innerHTML = new_val;
+        result_screen.innerHTML += digit.innerHTML;
+        // operation_screen.innerHTML += new_val;
       }
     })
   }));
+
+  document.getElementById('dec').addEventListener('click', () => {
+    inDecimal = true;
+  });
 
   Array.prototype.forEach.call(document.getElementsByClassName('operator'), (operation => {
     operation.addEventListener('click', () => {
@@ -51,10 +59,11 @@ window.addEventListener('load', () => {
           lastOp == 'multiply'  ? calc_mul : calc_div,
           new_val)
         new_val = 0;
-        result_screen.innerHTML = prev_val;
       }
+      result_screen.innerHTML = prev_val + "</br>" + operation.innerHTML;
       lastOp = operation.id;
       freshStart = false;
+      // operation_screen.innerHTML += (" " + operation.innerHTML + " ");
     })
   }));
 
@@ -80,6 +89,6 @@ window.addEventListener('load', () => {
     operating = false;
     lastOp = "";
     freshStart = true;
-    result_screen.innerHTML = new_val;
+    result_screen.innerHTML = "0";
   })
 });
