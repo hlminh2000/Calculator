@@ -18,6 +18,8 @@ window.addEventListener('load', () => {
   let result_screen = document.getElementsByClassName('screen_result')[0];
   let operation_screen = document.getElementsByClassName('screen_operation')[0];
 
+  result_screen.innerHTML = prev_val;
+
   Array.prototype.forEach.call(document.getElementsByClassName('number'), (digit => {
     digit.addEventListener('click', () => {
       if(freshStart === true){
@@ -49,7 +51,7 @@ window.addEventListener('load', () => {
           lastOp == 'multiply'  ? calc_mul : calc_div,
           new_val)
         new_val = 0;
-        console.log('result: ' + prev_val);
+        result_screen.innerHTML = prev_val;
       }
       lastOp = operation.id;
       freshStart = false;
@@ -65,11 +67,19 @@ window.addEventListener('load', () => {
         lastOp == 'multiply'  ? calc_mul : calc_div,
         new_val)
         new_val = 0;
-        console.log('result: ' + prev_val);
+        result_screen.innerHTML = prev_val;
         lastOp = '';
         operating = false;
         freshStart = true;
     }
   })
 
+  document.getElementById('clear').addEventListener('click', () => {
+    prev_val = 0;
+    new_val = 0;
+    operating = false;
+    lastOp = "";
+    freshStart = true;
+    result_screen.innerHTML = new_val;
+  })
 });

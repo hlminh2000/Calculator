@@ -1,3 +1,15 @@
+.blue {
+  background: #3C9ADA; }
+
+.green {
+  background: #2BA95F; }
+
+.grass {
+  background: #4CC6AD; }
+
+.gray {
+  background: #464646; }
+
 html {
   height: 100%;
   width: 100%; }
@@ -64,13 +76,9 @@ body {
   .app > .screen.screen_result {
     font-size: 3em; }
 
-.blue {
-  background: #3C9ADA; }
-
-.gray {
-  background: #464646; }
-
-.green {
-  background: #2BA95F; }
+.screen_result {
+  font-size: 4em;
+  padding: 10px;
+  align-items: flex-end; }
 
 /*# sourceMappingURL=style.css.map */

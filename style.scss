@@ -1,6 +1,13 @@
-$color-blue: #3C9ADA;
-$color-green: #2BA95F;
-$color-gray: #464646;
+$colors:
+  "blue"  #3C9ADA,
+  "green" #2BA95F,
+  "grass"   #4CC6AD,
+  "gray"  #464646;
+@each $c in $colors{
+  .#{nth($c, 1)}{
+    background: nth($c, 2);
+  }
+}
 
 html{
   height: 100%;
@@ -76,14 +83,8 @@ $flex_value:
   }
 }
 
-.blue{
-  background: $color-blue;
-}
-
-.gray{
-  background: $color-gray;
-}
-
-.green{
-  background: $color-green;
+.screen_result{
+  font-size: 4em;
+  padding: 10px;
+  align-items: flex-end;
 }
