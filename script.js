@@ -29,7 +29,7 @@ window.addEventListener('load', () => {
         freshStart = false;
         result_screen.innerHTML = "";
       }
-      if(operating === false){
+      if(!operating){
         prev_val *= 10;
         prev_val += Number(digit.innerHTML);
         result_screen.innerHTML += digit.innerHTML;
@@ -43,11 +43,24 @@ window.addEventListener('load', () => {
   }));
 
   document.getElementById('dec').addEventListener('click', () => {
-    // console.log(prev_val);
+    if(!operating){
+      decLocation = prev_val.toString().length;
+      console.log(decLocation);
+    }
+    else {
+      decLocation = new_val.toString().length;
+      console.log(decLocation);
+    }
   });
 
   Array.prototype.forEach.call(document.getElementsByClassName('operator'), (operation => {
     operation.addEventListener('click', () => {
+      if(!operating){
+        prev_val /= decLocation == 0? 1 : Math.pow(decLocation, 10);
+      }
+      else {
+        new_val /= decLocation == 0? 1 : Math.pow(decLocation, 10);
+      }
       operating = true;
       if(lastOp != ""){
         prev_val = evaluate(prev_val,
@@ -60,6 +73,7 @@ window.addEventListener('load', () => {
       result_screen.innerHTML = prev_val + "</br>" + operation.innerHTML;
       lastOp = operation.id;
       freshStart = false;
+      decLocation = 0;
     })
   }));
 
@@ -76,6 +90,7 @@ window.addEventListener('load', () => {
         lastOp = '';
         operating = false;
         freshStart = true;
+        decLocation = 0;
     }
   })
 
