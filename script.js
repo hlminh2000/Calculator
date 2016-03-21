@@ -43,24 +43,24 @@ window.addEventListener('load', () => {
   }));
 
   document.getElementById('dec').addEventListener('click', () => {
-    if(!operating){
-      decLocation = prev_val.toString().length;
-      console.log(decLocation);
-    }
-    else {
-      decLocation = new_val.toString().length;
-      console.log(decLocation);
-    }
+    // if(!operating){
+    //   decLocation = prev_val.toString().length;
+    //   console.log(decLocation);
+    // }
+    // else {
+    //   decLocation = new_val.toString().length;
+    //   console.log(decLocation);
+    // }
   });
 
   Array.prototype.forEach.call(document.getElementsByClassName('operator'), (operation => {
     operation.addEventListener('click', () => {
-      if(!operating){
-        prev_val /= decLocation == 0? 1 : Math.pow(decLocation, 10);
-      }
-      else {
-        new_val /= decLocation == 0? 1 : Math.pow(decLocation, 10);
-      }
+      // if(!operating){
+      //   prev_val /= decLocation == 0? 1 : Math.pow(decLocation, 10);
+      // }
+      // else {
+      //   new_val /= decLocation == 0? 1 : Math.pow(decLocation, 10);
+      // }
       operating = true;
       if(lastOp != ""){
         prev_val = evaluate(prev_val,
