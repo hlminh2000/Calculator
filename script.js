@@ -31,12 +31,12 @@ window.addEventListener('load', () => {
       }
       if(operating === false){
         prev_val *= 10;
-        prev_val += digit.innerHTML;
+        prev_val += Number(digit.innerHTML);
         result_screen.innerHTML += digit.innerHTML;
       }
       else{
         new_val *= 10;
-        new_val += digit.innerHTML;
+        new_val += Number(digit.innerHTML);
         result_screen.innerHTML += digit.innerHTML;
       }
     })
