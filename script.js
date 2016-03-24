@@ -89,4 +89,8 @@ window.addEventListener('load', () => {
     freshStart = true;
     result_screen.innerHTML = "0";
   })
+
+  document.getElementById('delete').addEventListener('click', () => {
+
+  })
 });
