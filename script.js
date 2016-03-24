@@ -48,7 +48,6 @@ window.addEventListener('load', () => {
 
   Array.prototype.forEach.call(document.getElementsByClassName('operator'), (operation => {
     operation.addEventListener('click', () => {
-      
       operating = true;
       if(lastOp != ""){
         prev_val = evaluate(prev_val,
