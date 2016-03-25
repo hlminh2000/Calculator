@@ -51,6 +51,7 @@ window.addEventListener('load', () => {
     }
     console.log(prev_val);
     in_decimal = true;
+    freshStart = false;
   });
 
   Array.prototype.forEach.call(document.getElementsByClassName('operator'), (operation => {
