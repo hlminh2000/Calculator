@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
   var operating = false;
   var lastOp = "";
   var freshStart = true;
-  var inDecimal = false;
+  var in_decimal = false;
   var decLocation = 0;
 
   let calc_add = (new_val) => { return (prev_val) => {return Number(new_val) + Number(prev_val)}; }
@@ -25,7 +25,7 @@ window.addEventListener('load', () => {
   Array.prototype.forEach.call(document.getElementsByClassName('number'), (digit => {
     digit.addEventListener('click', () => {
       if(freshStart){
-        prev_val = 0;
+        prev_val = "";
         freshStart = false;
         result_screen.innerHTML = "";
       }
@@ -41,7 +41,16 @@ window.addEventListener('load', () => {
   }));
 
   document.getElementById('dec').addEventListener('click', () => {
-
+    if(!operating && !in_decimal){
+      prev_val = prev_val + ".";
+      result_screen.innerHTML += ".";
+    }
+    else if(operating && !in_decimal){
+      new_val = new_val + ".";
+      result_screen.innerHTML += ".";
+    }
+    console.log(prev_val);
+    in_decimal = true;
   });
 
   Array.prototype.forEach.call(document.getElementsByClassName('operator'), (operation => {
@@ -53,12 +62,12 @@ window.addEventListener('load', () => {
           lastOp == 'minus'     ? calc_sub :
           lastOp == 'multiply'  ? calc_mul : calc_div,
           new_val)
-        new_val = 0;
+        new_val = "";
       }
       result_screen.innerHTML = prev_val + "</br>" + operation.innerHTML;
       lastOp = operation.id;
       freshStart = false;
-      decLocation = 0;
+      decLocation = "";
     })
   }));
 
@@ -70,25 +79,21 @@ window.addEventListener('load', () => {
         lastOp == 'minus'     ? calc_sub :
         lastOp == 'multiply'  ? calc_mul : calc_div,
         new_val)
-        new_val = 0;
+        new_val = "";
         result_screen.innerHTML = prev_val;
         lastOp = '';
         operating = false;
         freshStart = true;
-        decLocation = 0;
+        decLocation = "";
     }
   })
 
   document.getElementById('clear').addEventListener('click', () => {
-    prev_val = 0;
-    new_val = 0;
+    prev_val = "";
+    new_val = "";
     operating = false;
     lastOp = "";
     freshStart = true;
     result_screen.innerHTML = "0";
-  })
-
-  document.getElementById('delete').addEventListener('click', () => {
-
   })
 });
