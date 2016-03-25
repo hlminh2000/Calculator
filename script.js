@@ -3,18 +3,18 @@
 
 window.addEventListener('load', () => {
 
-  var prev_val = 0;
-  var new_val = 0;
+  var prev_val = "";
+  var new_val = "";
   var operating = false;
   var lastOp = "";
   var freshStart = true;
   var inDecimal = false;
   var decLocation = 0;
 
-  let calc_add = (new_val) => { return (prev_val) => {return new_val + prev_val}; }
-  let calc_sub = (new_val) => { return (prev_val) => {return new_val - prev_val}; }
-  let calc_mul = (new_val) => { return (prev_val) => {return new_val * prev_val}; }
-  let calc_div = (new_val) => { return (prev_val) => {return new_val / prev_val}; }
+  let calc_add = (new_val) => { return (prev_val) => {return Number(new_val) + Number(prev_val)}; }
+  let calc_sub = (new_val) => { return (prev_val) => {return Number(new_val) - Number(prev_val)}; }
+  let calc_mul = (new_val) => { return (prev_val) => {return Number(new_val) * Number(prev_val)}; }
+  let calc_div = (new_val) => { return (prev_val) => {return Number(new_val) / Number(prev_val)}; }
   let evaluate = (prev_val, operation, new_val) => { return operation(prev_val)(new_val); }
 
   let result_screen = document.getElementsByClassName('screen_result')[0];
@@ -24,19 +24,17 @@ window.addEventListener('load', () => {
 
   Array.prototype.forEach.call(document.getElementsByClassName('number'), (digit => {
     digit.addEventListener('click', () => {
-      if(freshStart === true){
+      if(freshStart){
         prev_val = 0;
         freshStart = false;
         result_screen.innerHTML = "";
       }
       if(!operating){
-        prev_val *= 10;
-        prev_val += Number(digit.innerHTML);
+        prev_val += digit.innerHTML;
         result_screen.innerHTML += digit.innerHTML;
       }
       else{
-        new_val *= 10;
-        new_val += Number(digit.innerHTML);
+        new_val += digit.innerHTML;
         result_screen.innerHTML += digit.innerHTML;
       }
     })
