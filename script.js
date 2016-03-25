@@ -11,10 +11,10 @@ window.addEventListener('load', () => {
   var in_decimal = false;
   var decLocation = 0;
 
-  let calc_add = (new_val) => { return (prev_val) => {return Number(new_val) + Number(prev_val)}; }
-  let calc_sub = (new_val) => { return (prev_val) => {return Number(new_val) - Number(prev_val)}; }
-  let calc_mul = (new_val) => { return (prev_val) => {return Number(new_val) * Number(prev_val)}; }
-  let calc_div = (new_val) => { return (prev_val) => {return Number(new_val) / Number(prev_val)}; }
+  let calc_add = (new_val) => { return (prev_val) => { return Number(new_val) + Number(prev_val) }; }
+  let calc_sub = (new_val) => { return (prev_val) => { return Number(new_val) - Number(prev_val) }; }
+  let calc_mul = (new_val) => { return (prev_val) => { return Number(new_val) * Number(prev_val) }; }
+  let calc_div = (new_val) => { return (prev_val) => { return Number(new_val) / Number(prev_val) }; }
   let evaluate = (prev_val, operation, new_val) => { return operation(prev_val)(new_val); }
 
   let result_screen = document.getElementsByClassName('screen_result')[0];
