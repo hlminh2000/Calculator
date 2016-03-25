@@ -6,8 +6,8 @@ window.addEventListener('load', () => {
   var prev_val = "";
   var new_val = "";
   var operating = false;
-  var lastOp = "";
-  var freshStart = true;
+  var last_op = "";
+  var start_fresh = true;
   var in_decimal = false;
   var decLocation = 0;
 
@@ -24,9 +24,9 @@ window.addEventListener('load', () => {
 
   Array.prototype.forEach.call(document.getElementsByClassName('number'), (digit => {
     digit.addEventListener('click', () => {
-      if(freshStart){
+      if(start_fresh){
         prev_val = "";
-        freshStart = false;
+        start_fresh = false;
         result_screen.innerHTML = "";
       }
       if(!operating){
@@ -51,23 +51,23 @@ window.addEventListener('load', () => {
     }
     console.log(prev_val);
     in_decimal = true;
-    freshStart = false;
+    start_fresh = false;
   });
 
   Array.prototype.forEach.call(document.getElementsByClassName('operator'), (operation => {
     operation.addEventListener('click', () => {
       operating = true;
-      if(lastOp != ""){
+      if(last_op != ""){
         prev_val = evaluate(prev_val,
-          lastOp == 'add'       ? calc_add :
-          lastOp == 'minus'     ? calc_sub :
-          lastOp == 'multiply'  ? calc_mul : calc_div,
+          last_op == 'add'       ? calc_add :
+          last_op == 'minus'     ? calc_sub :
+          last_op == 'multiply'  ? calc_mul : calc_div,
           new_val)
         new_val = "";
       }
       result_screen.innerHTML = prev_val + "</br>" + operation.innerHTML;
-      lastOp = operation.id;
-      freshStart = false;
+      last_op = operation.id;
+      start_fresh = false;
       decLocation = "";
     })
   }));
@@ -76,15 +76,15 @@ window.addEventListener('load', () => {
     // console.log('hi');
     if(operating === true){
       prev_val = evaluate(prev_val,
-        lastOp == 'add'       ? calc_add :
-        lastOp == 'minus'     ? calc_sub :
-        lastOp == 'multiply'  ? calc_mul : calc_div,
+        last_op == 'add'       ? calc_add :
+        last_op == 'minus'     ? calc_sub :
+        last_op == 'multiply'  ? calc_mul : calc_div,
         new_val)
         new_val = "";
         result_screen.innerHTML = prev_val;
-        lastOp = '';
+        last_op = '';
         operating = false;
-        freshStart = true;
+        start_fresh = true;
         decLocation = "";
     }
   })
@@ -93,8 +93,8 @@ window.addEventListener('load', () => {
     prev_val = "";
     new_val = "";
     operating = false;
-    lastOp = "";
-    freshStart = true;
+    last_op = "";
+    start_fresh = true;
     result_screen.innerHTML = "0";
   })
 });
