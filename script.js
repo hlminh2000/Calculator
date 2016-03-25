@@ -9,7 +9,6 @@ window.addEventListener('load', () => {
   var last_op = "";
   var start_fresh = true;
   var in_decimal = false;
-  var decLocation = 0;
 
   let calc_add = (new_val) => { return (prev_val) => { return Number(new_val) + Number(prev_val) }; }
   let calc_sub = (new_val) => { return (prev_val) => { return Number(new_val) - Number(prev_val) }; }
@@ -68,7 +67,6 @@ window.addEventListener('load', () => {
       result_screen.innerHTML = prev_val + "</br>" + operation.innerHTML;
       last_op = operation.id;
       start_fresh = false;
-      decLocation = "";
     })
   }));
 
@@ -85,7 +83,7 @@ window.addEventListener('load', () => {
         last_op = '';
         operating = false;
         start_fresh = true;
-        decLocation = "";
+
     }
   })
 
