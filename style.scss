@@ -9,42 +9,11 @@ $colors:
   }
 }
 
-html{
-  height: 100%;
-  width: 100%;
-}
-
-body{
-  font-family: sans-serif;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  color: white;
-  font-family: 'Lato', sans-serif;
-}
-
-.app{
-  height: 550px;
-  width: 320px;
-  // border: solid 2px green;
-  & > .screen{
-    // border: solid 1px blue;
-    & .screen_result{
-      font-size: 4em;
-      word-break: break-all;
-      text-align: right;
-    }
-  }
-  & > .buttons{
-    font-size: 1.2em;
-  }
-}
-
 *{
-  // border: solid 1px red;
   box-sizing: border-box;
 }
 
+// atomic CSS -----------------------
 .flex{ display: flex; }
 
 .flex-column{
@@ -84,9 +53,41 @@ $flex_value:
 .flex-justify-end{ justify-content: flex-end; }
 
 .pointer{ cursor: pointer; }
+// -----------------------
+
+//custom CSS -----------------------
+html{
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  font-family: sans-serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  color: white;
+  font-family: 'Lato', sans-serif;
+}
+
+.app{
+  height: 550px;
+  width: 320px;
+  & > .screen{
+    & .screen_result{
+      font-size: 4em;
+      word-break: break-all;
+      text-align: right;
+    }
+  }
+  & > .buttons{
+    font-size: 1.2em;
+  }
+}
 
 .screen_result{
   font-size: 4em;
   padding: 10px;
   align-items: flex-end;
 }
+// -----------------------
